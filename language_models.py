@@ -3,7 +3,7 @@ from collections import OrderedDict
 from transformers import BertTokenizer, BertModel, BertForMaskedLM, BertConfig
 
 
-import VGBERT_models
+import VGBERT_model
 
 
 def load_pretrained_vg_bert_model(checkpoint_path, device, output_hidden=True):
