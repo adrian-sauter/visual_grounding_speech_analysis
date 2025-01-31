@@ -1,0 +1,136 @@
+import argparse
+import json
+import gzip
+import re
+from pathlib import Path
+
+import cmudict
+import epitran
+#import librosa
+import soundfile as sf
+import numpy as np
+import pandas as pd
+#from datasets import load_dataset
+from nltk.corpus import wordnet
+from textgrids import TextGrid
+from tqdm import tqdm
+import nltk
+
+
+def _get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset_path", type=Path, help="Path to dataset")
+    parser.add_argument("--textgrid_path", type=Path, help="Path to TextGrids")
+    parser.add_argument("--dataset_type", type=str, choices=list(_SUPPORTED_DATASETS.keys()))
+    parser.add_argument("--output_path", type=Path, help="Output csv folder")
+
+    return parser.parse_args()
+
+
+def _cmudict(word, cache=cmudict.dict()):
+    if word not in cache:
+        return None
+    return [
+        re.sub(r"\d+", "", p)
+        for p in cache[word][0]
+    ]
+
+
+def _wordnet(word, lang="eng"):
+    synonyms = [
+        syn
+        for synsets in wordnet.synsets(word, lang=lang)
+        for syn in synsets.lemma_names("eng")
+        if syn != word
+    ]
+    return set(synonyms)
+
+
+def _librispeech(dataset_path: Path, textgrid_path: Path):
+    rows = []
+    for split in ("dev-clean", "test-clean"):
+        print(f'##########################')
+        print(f'now doing: {split}')
+        print(f'##########################')
+        for p in tqdm(textgrid_path.glob(f"{split}/*/*/*.TextGrid")):
+            grid = TextGrid(p)
+            for word in grid["words"]:
+                print(f'word: {word}')
+                phones = _cmudict(word.text)
+                synonyms = list(_wordnet(word.text))
+                if phones is not None and len(synonyms) > 0:
+                    rows.append({
+                        "text": word.text,
+                        "start": word.xmin,
+                        "finish": word.xmax,
+                        "path": str((dataset_path / p.relative_to(p.parents[3]).with_suffix(".flac")).absolute()),
+                        "phones": phones,
+                        "synonyms": synonyms,
+                        "speaker": p.parents[1].name,
+                    })
+
+    return pd.DataFrame(rows)
+
+
+def _multilingual_spoken_words(dataset_path: Path, textgrid_path: Path = None):
+    langs = pd.DataFrame([
+        {"name": "English", "wordnet": "eng", "MSW": "en", "epitran": "eng-Latn"},
+        {"name": "Chinese", "wordnet": "cmn", "MSW": "zh-CN", "epitran": "cmn-Hans"},
+        # {"name": "Arabic", "wordnet": "arb", "MSW": "ar"},
+        # {"name": "Greek", "wordnet": "ell", "MSW": "el"},
+        # {"name": "Persian", "wordnet": "fas", "MSW": "fa"},
+        # {"name": "French", "wordnet": "fra", "MSW": "fr"},
+        {"name": "Italian", "wordnet": "ita", "MSW": "it", "epitran": "ita-Latn"},
+        # {"name": "Catalan", "wordnet": "cat", "MSW": "ca"},
+        # {"name": "Basque", "wordnet": "eus", "MSW": "eu"},
+        {"name": "Spanish", "wordnet": "spa", "MSW": "es", "epitran": "spa-Latn"},
+        {"name": "Indonesian", "wordnet": "ind", "MSW": "id", "epitran": "ind-Latn"},
+        {"name": "Polish", "wordnet": "pol", "MSW": "pl", "epitran": "pol-Latn"},
+        # {"name": "Portuguese", "wordnet": "por", "MSW": "pt"},
+        # {"name": "Slovenian", "wordnet": "slv", "MSW": "sl"},
+        {"name": "Swedish", "wordnet": "swe", "MSW": "sv-SE", "epitran": "swe-Latn"},
+    ])
+
+    metadata = json.load(gzip.open(dataset_path / "metadata.json.gz"))
+
+    eng_df = pd.read_csv("datasets/msw_english.csv", keep_default_na=False)
+    eng_dict = dict(zip(eng_df.word, eng_df.ipa))
+    eng_words = set(eng_dict.keys())
+
+    rows = []
+    for row in langs.itertuples():
+        epi = epitran.Epitran(row.epitran, cedict_file="datasets/cedict_1_0_ts_utf-8_mdbg.txt")
+        for word, fnames in tqdm(metadata[row.MSW]["filenames"].items()):
+            synonyms = _wordnet(word, lang=row.wordnet) & eng_words
+            if len(synonyms) > 0 or row.name == "English":
+                for fname in fnames:
+                    if row.name == "English":
+                        # epitran English is too slow
+                        # used cached version in datasets/ directory
+                        phones = eng_dict[word]
+                        synonyms = []
+                    else:
+                        phones = epi.transliterate(word)
+                    rows.append({
+                        "text": word,
+                        "path": dataset_path / "audio" / row.MSW / "clips" / word / fname,
+                        "phones": list(phones),
+                        "synonyms": list(synonyms),
+                        "language": row.name,
+                        "start": 0.0,
+                        "finish": 1.0,
+                    })
+    return pd.DataFrame(rows)
+
+_SUPPORTED_DATASETS = {
+    "librispeech": _librispeech,
+    "multilingual_spoken_words": _multilingual_spoken_words,
+}
+
+
+if __name__ == "__main__":
+    nltk.download('wordnet')
+    args = _get_args()
+    parser = _SUPPORTED_DATASETS[args.dataset_type]
+    df = parser(dataset_path=args.dataset_path, textgrid_path=args.textgrid_path)
+    df.to_pickle(args.output_path)
