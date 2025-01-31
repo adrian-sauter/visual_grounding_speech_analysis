@@ -1,1 +1,1 @@
-# visual_grounding_speech_analysis
+# Beyond Speech: Exploring the Effects of Visual Grounding on Speech Representations
