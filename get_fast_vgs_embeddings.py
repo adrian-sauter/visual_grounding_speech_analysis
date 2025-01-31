@@ -3,12 +3,20 @@ import os
 import pickle
 import argparse
 import torch
-from fast_vgs_models import fast_vgs, w2v2_model
 import soxr
 import soundfile as sf
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+
+import sys
+from pathlib import Path
+
+# Ensure fast_vgs_family is in the path
+sys.path.append(str(Path(__file__).parent / "fast_vgs_family"))
+
+from fast_vgs_family import fast_vgs, w2v2_model
+
 
 def load_model(model_path):
     with open(f"{model_path}/args.pkl", "rb") as f:
