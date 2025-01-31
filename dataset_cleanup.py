@@ -1,3 +1,5 @@
+# taken from Choi et al. (2024): https://github.com/juice500ml/phonetic_semantic_probing/tree/24b85b648c6512d9fe4df4139c546482080fef4c 
+
 import argparse
 import json
 import gzip
