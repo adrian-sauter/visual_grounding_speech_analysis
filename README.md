@@ -20,11 +20,11 @@ These links were taken from the official repositories:
 
 ## 2. Download Data
 You will need to download the following datasets:
-- **GloVe Embeddings**: [glove.6B.zip](https://nlp.stanford.edu/projects/glove/)
 - **MALD Data**: [MALD database](http://mald.artsrn.ualberta.ca/) (Item data and "Words" from Audio Files)
-- **Concreteness Ratings**: [Concreteness ratings Excel file](https://link.springer.com/article/10.3758/s13428-013-0403-5#MOESM1)
 - **Librispeech**: [Librispeech dev-clean and test-clean](https://www.openslr.org/12)
 - **Librispeech Alignments**: [Alignments from Zenodo](https://zenodo.org/records/2619474#.XKDP2VNKg1g)
+- **Concreteness Ratings**: [Concreteness ratings Excel file](https://link.springer.com/article/10.3758/s13428-013-0403-5#MOESM1)
+- **GloVe Embeddings**: [glove.6B.zip](https://nlp.stanford.edu/projects/glove/)
 
 ## 3. Extract Embeddings
 To extract embeddings from the data:
