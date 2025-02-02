@@ -2,8 +2,8 @@
 
 ## 0. Clone the Repo and Install Environments
 Please clone this repository and install the required libraries listed in the following files:
-- `<requirements_analysis.txt>`
-- `<requirements_representation_extraction.txt>`
+- `requirements_analysis.txt`
+- `requirements_representation_extraction.txt`
 
 ## 1. Model Weights
 Model weights for **wav2vec 2.0-base** and **BERT-base** can be accessed via HuggingFace:
@@ -28,13 +28,13 @@ You will need to download the following datasets:
 
 ## 3. Extract Embeddings
 To extract embeddings from the data:
-- **MALD**: Check the arguments in `<get_fast_vgs_embeddings.py>` and `<get_w2v2_embeddings.py>`, then run these files.
+- **MALD**: Check the arguments in `get_fast_vgs_embeddings.py` and `get_w2v2_embeddings.py`, then run these files.
 - **LibriSpeech**: Run `dataset_cleanup.py` (following Choi et al., 2024), then run the same as MALD.
   - `args.slice = True` performs audio slicing.
   - `args.slice = False` performs feature slicing.
 
 ## 4. Analysis
-Follow the steps described in the respective notebooks for analysis.
+Follow the steps described in the respective notebooks (`*.ipynb`) for analysis.
 
 ## Acknowledgments
 We would like to thank the authors of the following works:
