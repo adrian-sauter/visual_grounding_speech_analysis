@@ -19,7 +19,7 @@ These links were taken from the official repositories:
 - [VG-BERT GitHub](https://github.com/yizhen-zhang/VG-Bert)
 
 ## 2. Download Data
-Our newly created datasets of semantically similar and phonetically different words (or vice versa) can be found in `semantic_categories.json` and `phonetic_groups.json`, respectively.
+Our newly created datasets of semantically similar and phonetically different words (or vice versa) can be found in `semantic_categories.json` and `phonetic_groups.json`, respectively.  
 Below, you can find the publicly available datasets that we used in our research:
 - **MALD Data**: [MALD database](http://mald.artsrn.ualberta.ca/) (Item data and "Words" from Audio Files)
 - **Librispeech**: [Librispeech dev-clean and test-clean](https://www.openslr.org/12)
