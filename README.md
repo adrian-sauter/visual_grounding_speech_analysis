@@ -30,7 +30,7 @@ Below, you can find the publicly available datasets that we used in our research
 ## 3. Extract Embeddings
 To extract embeddings from the data:
 - **MALD**: Check the arguments in `get_fast_vgs_embeddings.py` and `get_w2v2_embeddings.py`, then run these files.
-- **LibriSpeech**: Run `dataset_cleanup.py` (following Choi et al., 2024), then run the same as MALD.
+- **LibriSpeech**: Run `dataset_cleanup.py` (following Choi et al., 2024), then proceed as for MALD.
   - `args.slice = True` performs audio slicing.
   - `args.slice = False` performs feature slicing.
 
