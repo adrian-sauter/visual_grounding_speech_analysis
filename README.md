@@ -38,8 +38,7 @@ To extract embeddings from the data:
 Follow the steps described in the respective notebooks (`*.ipynb`) for analysis.
 
 ## Acknowledgments
-We would like to thank the authors of the following works:
-
+We would like to thank the authors of the following works:  
 **Code References:**
 - Choi, K., Pasad, A., Nakamura, T., Fukayama, S., Livescu, K., & Watanabe, S. (2024). *Self-Supervised Speech Representations are More Phonetic than Semantic*. arXiv preprint arXiv:2406.08619.
 - Peng, P., & Harwath, D. (2022). *Fast-Slow Transformer for Visually Grounding Speech*. Proceedings of the 2022 International Conference on Acoustics, Speech and Signal Processing.
