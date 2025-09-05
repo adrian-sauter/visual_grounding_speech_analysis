@@ -45,8 +45,9 @@ Follow the steps described in the respective notebooks (`*.ipynb`) for analysis.
 _All ± values indicate one standard deviation._
 
 ---
-
+<div align="center">
 #### **Concrete Categories**
+</div>
 
 | Category            | Words | Avg. Concr. | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |---------------------|-------|-------------|----------------|------------------|
@@ -59,7 +60,9 @@ _All ± values indicate one standard deviation._
 
 ---
 
+<div align="center">
 #### **Abstract Categories**
+</div>
 
 | Category            | Words | Avg. Concr. | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |---------------------|-------|-------------|----------------|------------------|
@@ -74,7 +77,9 @@ _All ± values indicate one standard deviation._
 
 ---
 
+<div align="center">
 #### **Concrete Categories**
+</div>
 
 | Group       | Words | Avg. Concreteness | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |-------------|-------|-------------------|----------------|------------------|
@@ -88,7 +93,9 @@ _All ± values indicate one standard deviation._
 
 ---
 
+<div align="center">
 #### **Abstract Categories**
+</div>
 
 | Group       | Words | Avg. Concreteness | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |-------------|-------|-------------------|----------------|------------------|
