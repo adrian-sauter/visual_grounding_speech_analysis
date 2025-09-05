@@ -41,8 +41,7 @@ Follow the steps described in the respective notebooks (`*.ipynb`) for analysis.
 
 ### **Semantic Categories**
 
-#### Semantic categories with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances.  
-_All ± values indicate one standard deviation._
+_Semantic categories with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances. All ± values indicate one standard deviation._
 
 #### **Concrete Categories**
 | Category            | Words | Avg. Concr. | Avg. Cos. Sim. | Avg. Phon. Dist. |
@@ -65,8 +64,7 @@ _All ± values indicate one standard deviation._
 ---
 ### **Phonetic Groups**
 
-#### Phonetic groups with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances.  
-_All ± values indicate one standard deviation._
+_Phonetic groups with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances. All ± values indicate one standard deviation._
 
 #### **Concrete Categories**
 
