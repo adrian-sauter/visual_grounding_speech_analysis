@@ -41,12 +41,12 @@ Follow the steps described in the respective notebooks (`*.ipynb`) for analysis.
 
 ### Semantic Categories
 
-### Semantic categories with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances.  
+#### Semantic categories with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances.  
 _All ± values indicate one standard deviation._
 
 ---
 
-## **Concrete Categories**
+#### **Concrete Categories**
 
 | Category            | Words | Avg. Concr. | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |---------------------|-------|-------------|----------------|------------------|
@@ -59,7 +59,7 @@ _All ± values indicate one standard deviation._
 
 ---
 
-## **Abstract Categories**
+#### **Abstract Categories**
 
 | Category            | Words | Avg. Concr. | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |---------------------|-------|-------------|----------------|------------------|
@@ -68,12 +68,13 @@ _All ± values indicate one standard deviation._
 | **Ethical/Legal Terms** | justice, fairness, honesty, integrity, law, duty, rights, punishment | 1.84 ± 0.36 | 0.38 ± 0.10 | 0.64 ± 0.11 |
 
 ### Phonetic Groups
-### Phonetic groups with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances.  
+
+#### Phonetic groups with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances.  
 _All ± values indicate one standard deviation._
 
 ---
 
-## **Concrete Categories**
+#### **Concrete Categories**
 
 | Group       | Words | Avg. Concreteness | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |-------------|-------|-------------------|----------------|------------------|
@@ -87,7 +88,7 @@ _All ± values indicate one standard deviation._
 
 ---
 
-## **Abstract Categories**
+#### **Abstract Categories**
 
 | Group       | Words | Avg. Concreteness | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |-------------|-------|-------------------|----------------|------------------|
