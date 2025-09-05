@@ -39,16 +39,12 @@ Follow the steps described in the respective notebooks (`*.ipynb`) for analysis.
 
 ## 5. Datasets
 
-### Semantic Categories
+### **Semantic Categories**
 
 #### Semantic categories with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances.  
 _All ± values indicate one standard deviation._
 
----
-<div align="center">
 #### **Concrete Categories**
-</div>
-
 | Category            | Words | Avg. Concr. | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |---------------------|-------|-------------|----------------|------------------|
 | **Musical Instruments** | piano, guitar, violin, trumpet, flute, saxophone, cello, drum, clarinet, harp | 4.91 ± 0.08 | 0.63 ± 0.09 | 0.64 ± 0.11 |
@@ -58,11 +54,7 @@ _All ± values indicate one standard deviation._
 | **Building Materials**  | brick, concrete, wood, cement, steel, stone, gravel, glass, tile, sand, asphalt, plaster, insulation, drywall, lumber, clay | 4.78 ± 0.14 | 0.41 ± 0.11 | 0.67 ± 0.12 |
 | **Organs**              | heart, liver, brain, kidney, lung, stomach, pancreas, bladder | 4.65 ± 0.13 | 0.49 ± 0.10 | 0.65 ± 0.11 |
 
----
-
-<div align="center">
 #### **Abstract Categories**
-</div>
 
 | Category            | Words | Avg. Concr. | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |---------------------|-------|-------------|----------------|------------------|
@@ -70,16 +62,13 @@ _All ± values indicate one standard deviation._
 | **Emotions**        | joy, sadness, anger, fear, love, pride, shame, envy, anxiety, disgust | 2.10 ± 0.41 | 0.43 ± 0.10 | 0.70 ± 0.14 |
 | **Ethical/Legal Terms** | justice, fairness, honesty, integrity, law, duty, rights, punishment | 1.84 ± 0.36 | 0.38 ± 0.10 | 0.64 ± 0.11 |
 
-### Phonetic Groups
+---
+### **Phonetic Groups**
 
 #### Phonetic groups with words, average concreteness ratings, average cosine similarities of GloVe embeddings, and average pairwise phonetic (Levenshtein) distances.  
 _All ± values indicate one standard deviation._
 
----
-
-<div align="center">
 #### **Concrete Categories**
-</div>
 
 | Group       | Words | Avg. Concreteness | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |-------------|-------|-------------------|----------------|------------------|
@@ -91,11 +80,7 @@ _All ± values indicate one standard deviation._
 | **Concrete 6** | hothouse, chophouse, courthouse, harness, houseboat | 4.49 ± 0.30 | 0.00 ± 0.06 | 0.36 ± 0.12 |
 | **Concrete 7** | lap, map, cap, lamb, latch, lawn, pal, dam | 4.64 ± 0.38 | 0.03 ± 0.06 | 0.29 ± 0.09 |
 
----
-
-<div align="center">
 #### **Abstract Categories**
-</div>
 
 | Group       | Words | Avg. Concreteness | Avg. Cos. Sim. | Avg. Phon. Dist. |
 |-------------|-------|-------------------|----------------|------------------|
