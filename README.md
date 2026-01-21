@@ -1,4 +1,4 @@
-# Beyond Speech: Exploring the Effects of Visual Grounding on Speech Representations
+# The Curious Case of Visual Grounding: Different Effects for Speech- and Text-based Language Encoders
 
 ## 0. Clone the Repo and Install Environments
 Please clone this repository and install the required libraries listed in the following files:
