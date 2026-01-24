@@ -22,7 +22,8 @@ These links were taken from the official repositories:
 
 ## 2. Download Data
 Our newly created datasets of semantically similar and phonetically different words (or vice versa) can be found in `semantic_categories.json` and `phonetic_groups.json`, respectively.  
-Below, you can find the publicly available datasets that we used in our research:
+The audio files and corresponding model embeddings used for this work can be found here: [https://zenodo.org/records/18335706](https://zenodo.org/records/18335706). 
+We also provide the links to the original datasets:
 - **MALD Data**: [MALD database](http://mald.artsrn.ualberta.ca/) (Item data and "Words" from Audio Files)
 - **Librispeech**: [Librispeech dev-clean and test-clean](https://www.openslr.org/12)
 - **Librispeech Alignments**: [Alignments from Zenodo](https://zenodo.org/records/2619474#.XKDP2VNKg1g)
@@ -33,7 +34,7 @@ Below, you can find the publicly available datasets that we used in our research
 To extract embeddings from the data:
 - **MALD**: Check the arguments in `get_fast_vgs_embeddings.py` and `get_w2v2_embeddings.py`, then run these files.
 - **LibriSpeech**: Run `dataset_cleanup.py` (following Choi et al., 2024), then proceed as for MALD.
-  - `args.slice = True` performs audio slicing.
+  - `args.slice = True` performs audio slicing used in our work).
   - `args.slice = False` performs feature slicing.
 
 ## 4. Analysis
