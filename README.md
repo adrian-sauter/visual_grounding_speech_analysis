@@ -1,6 +1,6 @@
 # The Curious Case of Visual Grounding: Different Effects for Speech- and Text-based Language Encoders
 
-** The audio files and corresponding model embeddings used for this work can be found here: [https://zenodo.org/records/18335706](https://zenodo.org/records/18335706) **
+**The audio files and corresponding model embeddings used for this work can be found here: [https://zenodo.org/records/18335706](https://zenodo.org/records/18335706)**
 
 ## 0. Clone the Repo and Install Environments
 Please clone this repository and install the required libraries listed in the following files:
